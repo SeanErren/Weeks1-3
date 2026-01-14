@@ -5,6 +5,8 @@ public class LinearInterpolation : MonoBehaviour
     public Transform startPos, endPos;
     public float time = 0;
 
+    public AnimationCurve curve;
+
     bool isForward = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,6 +32,7 @@ public class LinearInterpolation : MonoBehaviour
         if (time < 0)
             isForward = true;
 
-        transform.position = Vector2.Lerp(startPos.position, endPos.position, time);
+        //transform.position = Vector2.Lerp(startPos.position, endPos.position, time);   Lerp with just time
+        transform.position = Vector2.Lerp(startPos.position, endPos.position, curve.Evaluate(time));
     }
 }
