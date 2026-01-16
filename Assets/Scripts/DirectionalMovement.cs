@@ -17,6 +17,11 @@ public class DirectionalMovement : MonoBehaviour
         //* -1 to go left (-1,-0,-0).
         //* speed to move at the desired speed (-2.5, -0, -0).
         //* Time.deltaTime for movement per time instead of per frame.
-        transform.position += transform.right * -1 * speed * Time.deltaTime;
+
+        //Transform.right moves right in relation to the x axis vector, if the axis is moved "right" is moved.
+        //transform.position += transform.right * -1 * speed * Time.deltaTime;
+
+        //Instead, to move right based on the grid I will use a fresh Vector with coordinates (-1, 0, 0)
+        transform.position += new Vector3(-1, 0, 0) * speed * Time.deltaTime;
     }
 }
