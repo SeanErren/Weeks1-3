@@ -6,8 +6,10 @@ public class PlayerPull : MonoBehaviour
     public Transform bH1, bH2, bH3; //The black holes' positions.
     public float maxSpeed = 5; //The max speed the player is allowed to move towards their target.
     public float roomBoundrySize = 1;
+    public float resetRange = 1; //The radius for resetting the player when they are close to a black hole.
 
     float speedMult = 0; //multiplies the normilized vector to create the speed at which the player is moving towards the target.
+    Vector2 basePos;
     Transform[] blackHoles;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,6 +17,8 @@ public class PlayerPull : MonoBehaviour
     {
         //Testing the values returned from the conversion, only half of the size of the screen? Because below is -?
         Debug.Log(Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)));
+
+        basePos = transform.position;
 
         //Putting the black holes' positions into an arraylist so that I can go through them more easily.
         blackHoles  = new Transform[3] {bH1, bH2, bH3};
@@ -42,6 +46,11 @@ public class PlayerPull : MonoBehaviour
 
             //Adding the normalized vector (size 1 hypotenuse) times the speed to the position.
             transform.position += (blackHole.position - transform.position).normalized * speedMult * Time.deltaTime;
+
+            if ((blackHole.position - transform.position).magnitude < resetRange)
+            {
+                transform.position = basePos;
+            }
         }
 
         //Getting pulled towards the mouse.
