@@ -1,3 +1,5 @@
+
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +10,7 @@ public class SpriteChanger : MonoBehaviour
     public Sprite spriteMoon,spriteSun;
 
     public Sprite[] barrels = new Sprite[3];
+    public List<Sprite> spriteList;
 
     bool hasSpriteChanged = false;
     int randomBarrel = 0;
@@ -40,6 +43,16 @@ public class SpriteChanger : MonoBehaviour
             changeToRandomBarrel();
         }
 
+        //Change from spriteList
+        if (Keyboard.current.digit3Key.wasPressedThisFrame)
+        {
+            //If there is a sprite within the list
+            if (spriteList.Count > 0)
+                changeToNextSprite();
+            else
+                Debug.Log("The list is empty, can't change sprite");
+        }
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         //Change color on mouse hover
@@ -51,6 +64,11 @@ public class SpriteChanger : MonoBehaviour
         else
         {
             spriteRenderer.color = Color.white;
+        }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame && spriteList.Count > 0)
+        {
+            spriteList.RemoveAt(0);
         }
     }
 
@@ -67,5 +85,12 @@ public class SpriteChanger : MonoBehaviour
         randomBarrel = Random.Range(0, barrels.Length);
 
         spriteRenderer.sprite = barrels[randomBarrel];
+    }
+
+    //Changes to the next sprite in the list
+    void changeToNextSprite()
+    {
+        int randomSprite = Random.Range(0, spriteList.Count);
+        spriteRenderer.sprite = spriteList[randomSprite];
     }
 }

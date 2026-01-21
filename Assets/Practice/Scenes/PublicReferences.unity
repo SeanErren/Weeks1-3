@@ -157,6 +157,11 @@ MonoBehaviour:
   - {fileID: 9055863997953671947, guid: ae3435eb873794f4aad3d12f14a9fc6f, type: 3}
   - {fileID: 8245305397469200176, guid: 7325cb2f51d34fb4da5e5c33ebff71db, type: 3}
   - {fileID: 8310752768603522028, guid: 3662a97cdce73b6438721e9cc78fa2a9, type: 3}
+  spriteList:
+  - {fileID: -1813272262993250906, guid: a73cf436b11ed194ebda863ccd7e3e41, type: 3}
+  - {fileID: 7664051273582161203, guid: acf5e717689426c41b9b940f54bfd34a, type: 3}
+  - {fileID: 1311752102108684794, guid: f3602b92cfe389345b3557ae233c7d0e, type: 3}
+  - {fileID: 1597492703415919409, guid: 1cffdeb695458b944b296b828067e758, type: 3}
 --- !u!212 &636891412
 SpriteRenderer:
   m_ObjectHideFlags: 0
