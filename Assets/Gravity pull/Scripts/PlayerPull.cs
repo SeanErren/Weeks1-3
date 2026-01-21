@@ -16,7 +16,12 @@ public class PlayerPull : MonoBehaviour
     void Start()
     {
         //Testing the values returned from the conversion, only half of the size of the screen? Because below is -?
-        Debug.Log(Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)));
+        //Debug.Log(Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)));
+
+        Debug.Log("Hover with the mouse close to the green marble to move it. " +
+            "Your goal is to reach the grass on the other side." +
+            "\nThe power bar at the top is your pulling power. " +
+            "Watch out for the black holes!");
 
         basePos = transform.position;
 
