@@ -19,6 +19,7 @@ public class SpriteChanger : MonoBehaviour
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
+        //spriteRenderer.sprite.bounds refers to the bounds of the sprite but at 0,0
         if (spriteRenderer.bounds.Contains(mousePos))
         {
             spriteRenderer.color = c;
