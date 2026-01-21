@@ -7,6 +7,7 @@ public class FirstScript : MonoBehaviour
 
     public bool isForward = true;
 
+    public PauseGame pauseGame;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +17,9 @@ public class FirstScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pauseGame.isPaused)
+            return;
+
         //Create a temporary Vector2 for the transform's position
         Vector2 newPos = transform.position, screenPos = Camera.main.WorldToScreenPoint(transform.position);
 

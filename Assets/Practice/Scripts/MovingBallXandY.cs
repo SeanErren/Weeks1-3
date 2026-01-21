@@ -5,6 +5,7 @@ public class MovingBallXandY : MonoBehaviour
     //The movement happens in pixels
     public int speedX = 50, speedY = 50;
 
+    public PauseGame pauseGame;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +15,9 @@ public class MovingBallXandY : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pauseGame.isPaused)
+            return;
+
         //Can only change transform.position with a full Vector (can't change the x, y and z directly)
         //Getting the screen's position in pixels
         Vector2 posOnScreen = Camera.main.WorldToScreenPoint(transform.position);
