@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 32b0d37bcb42d9543b85518d43b360cd
+guid: b392f4ab9b23efa429b5ebafa29c6da4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3702861987664247208
-    second: Room 1_0
+      213: 2227111970989504880
+    second: You win message background 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Room 1_0
+      name: You win message background 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 856c9fc04aacc9cc0800000000000000
-      internalID: -3702861987664247208
+      spriteID: 07979d1b98a48ee10800000000000000
+      internalID: 2227111970989504880
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Room 1_0: -3702861987664247208
+      You win message background 1_0: 2227111970989504880
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
