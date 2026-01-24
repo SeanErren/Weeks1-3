@@ -4,6 +4,7 @@ public class FirstScript : MonoBehaviour
 {
     public float forwardSpeed = 0.01f;
     public float backwardSpeed = -0.01f;
+    public float randomStartRangeMult = 2.5f;
 
     public bool isForward = true;
 
@@ -11,14 +12,16 @@ public class FirstScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.position = (Vector2)transform.position + Random.insideUnitCircle * 2.5f;
+        //Randomize the starting position within a unit circle range
+        transform.position = (Vector2)transform.position + Random.insideUnitCircle * randomStartRangeMult;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pauseGame.isPaused)
-            return;
+        //Can't use pauseGame when generating an object from code as I don't know how to assign it a script from code yet
+        //if (pauseGame.isPaused)
+           // return;
 
         //Create a temporary Vector2 for the transform's position
         Vector2 newPos = transform.position, screenPos = Camera.main.WorldToScreenPoint(transform.position);
