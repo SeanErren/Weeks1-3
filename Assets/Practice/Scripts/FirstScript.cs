@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class FirstScript : MonoBehaviour
 {
-    public float forwardSpeed = 0.01f;
-    public float backwardSpeed = -0.01f;
+    public float forwardSpeed = 3;
+    public float backwardSpeed = -3;
     public float randomStartRangeMult = 2.5f;
 
     public bool isForward = true;
@@ -34,9 +34,9 @@ public class FirstScript : MonoBehaviour
 
         //Move according to the direction
         if (isForward)
-            newPos.x += forwardSpeed;
+            newPos.x += forwardSpeed * Time.deltaTime;
         else
-            newPos.x += backwardSpeed;
+            newPos.x += backwardSpeed * Time.deltaTime;
 
         //Set the new transform position to the temporary Vector2
         transform.position = newPos;
