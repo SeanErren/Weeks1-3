@@ -16,7 +16,9 @@ public class SpawnTank : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //Will destroy the game object that calls it after a set amount of time (in this case 5 seconds),
+        //In other words, can instantiate a game object with a script containing the code below and have it destroy itself after x amount of time.
+        //Destroy(GameObject, 5)
     }
 
     // Update is called once per frame
